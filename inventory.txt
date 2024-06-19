@@ -1,0 +1,13 @@
+
+	Result:
+
+	Inventory ID  |                  	Product Name    |    	Quantity  |          	Category      | 
+ 
+        10	  |                           can food	  |              30	|                     food	 |
+         9	  |                            booster	  |              70	|                     food	 |
+         6	  |                            Whiskas	  |              60	|                     food	 |
+         5	  |                           Cat Tofu	  |              40	|                   Litter	 |
+         4	  |                          Fake Fish	  |              70	|                     Toys	 |
+         3	  |                        Royal Canin	  |              50	|                     Food	 |
+         2	  |                         Fresh Step	  |              40	|                   Litter	 |
+         1	  |                           Wet food	  |              20	|                     Food	 |

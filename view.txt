@@ -1,0 +1,8 @@
+
+	Result:
+
+	Staff ID  |                	Staff Username    | 	Staff Email  | 	Staff Phone Number      | 
+ 
+         6	  |                                qis	  |   qis@gmail.com	|               0198821760	 |
+         3	  |                               Ucop	  |  ucop@yahoo.com	|                011927801	 |
+         1	  |                             alya22	  |  alya@gmail.com	|                011892100	 |

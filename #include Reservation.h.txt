@@ -1,0 +1,99 @@
+#include "Reservation.h"
+#include <iostream>
+#include <ctime>
+#include "DBConnection.h" 
+#include "Customer.h"
+using namespace std;
+
+Reservation::Reservation() { 
+	//initialize
+	reservationId = 0; 
+	roomName = "";
+	checkInDate = "";
+	checkOutDate = "";
+}
+Reservation::Reservation(int reservationId, std::string roomName, std::string catSpecies, std::string catAge, int customerId) {
+	this->catId = catId;
+	this->catName = catName;
+	this->catSpecies = catSpecies;
+	this->catAge = catAge;
+	this->customerId = customerId;
+}
+int Cat::insertcat() {
+
+	//string something = user.user_id <- tukarkan jadi string
+
+	DBConnection db;//instantiate
+	db.prepareStatement("Insert into cat (customerId, catName, catSpecies, catAge) VALUES (?,?,?,?)"); // <-- Ni nama dia query
+	db.stmt->setInt(1, customerId);
+	db.stmt->setString(2, catName);
+	db.stmt->setString(3, catSpecies);
+	db.stmt->setString(4, catAge);
+	db.QueryStatement();
+	generatedcatId = db.getGeneratedId();
+	db.~DBConnection();
+	return generatedcatId;
+}
+
+/*
+// // reservation.cpp
+#include "reservation.h"
+#include <iostream>
+
+// Reservation class implementation
+Reservation::Reservation(const std::string &catName, const std::string &ownerName, int duration)
+    : catName(catName), ownerName(ownerName), duration(duration) {}
+
+std::string Reservation::getCatName() const {
+    return catName;
+}
+
+std::string Reservation::getOwnerName() const {
+    return ownerName;
+}
+/*
+int Reservation::getDuration() const {
+    return duration;
+}
+
+// ReservationSystem class implementation
+void ReservationSystem::addReservation(const Reservation& reservation) {
+    reservations.push_back(reservation);
+}
+
+void ReservationSystem::displayReservations() const {
+    for (const auto & reservation : reservations) {
+        std::cout << "Cat Name: " << reservation.getCatName()
+                  << ", Owner Name: " << reservation.getOwnerName()
+                  << ", Duration: " << reservation.getDuration() << " days" << std::endl;
+    }
+}
+/* class implementation
+     Reservation::Reservation(const std::string& catName, const std::string& ownerName, int duration)
+    : catName(catName), ownerName(ownerName), duration(duration) {}*/
+/*
+std::string Reservation::getCatName() const {
+    return catName;
+}
+
+std::string Reservation::getOwnerName() const {
+    return ownerName;
+}
+
+int Reservation::getDuration() const {
+    return duration;
+}
+
+// BookingSystem class implementation
+void ReservationSystem::addReservation(const Reservation& reservation) {
+    reservations.push_back(reservation);
+}
+/*
+/*void ReservationSystem::displayReservations() const {
+  //  for (const auto& reservation : reservations) {
+        std::cout << "Cat Name: " << reservation.getCatName()
+            << ", Owner Name: " << reservation.getOwnerName()
+            << ", Duration: " << reservation.getDuration() << " days" << std::endl;
+    }
+}
+*/
